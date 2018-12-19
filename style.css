@@ -1,0 +1,669 @@
+/*主体部分样式*/
+
+/*轮播图样式*/
+.main .swiper {
+  width: 100%;
+  height: 360px;
+  /*overflow: hidden;*/
+  position: relative;
+}
+
+.main .swiper .swiper-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.main .swiper .swiper-slide {
+  float: left;
+  width: 1200px;
+  height: 360px;
+}
+
+.main .swiper-slide img {
+  width: 100%;
+  height: 360px;
+}
+
+.main .swiper .swiper-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.main .swiper .swiper-button-prev {
+  background: rgba(0, 0, 0, .5) url("/assets/group.png");
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  left: 0;
+}
+
+.main .swiper .swiper-button-next {
+  background: rgba(0, 0, 0, .5) url("/assets/Group10.png");
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  right: 0;
+}
+
+.main .swiper .swiper-button-disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.4;
+}
+
+.main .swiper .swiper-pagination {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main .swiper .swiper-pagination i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .4);
+  margin-right: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.main .swiper .swiper-pagination i:last-child {
+  margin-right: 0;
+}
+
+.main .swiper .swiper-pagination i.active {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/*选择器样式*/
+.selector {
+  width: 100%;
+  height: 90px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.selector-container {
+  padding-top: 20px;
+  padding-left: 42px;
+  background-color: hsla(0, 0%, 5%, .8);
+  height: 90px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.selector-container .form-group {
+  float: left;
+  margin-right: 20px;
+  position: relative;
+}
+
+.selector-container .form-group:hover {
+  cursor: pointer;
+}
+
+.selector-container .check-in {
+  margin-right: 0;
+}
+
+.selector-container .form-group .icon-loading {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  right: 5px;
+  top: 30px;
+  border-radius: 50%;
+  border: 1px solid #0B9D78;
+  border-right-color: transparent;
+  animation: rotate .5s infinite linear;
+  display: none;
+}
+
+.selector-container .form-group label {
+  font-size: 12px;
+  color: #fff;
+}
+
+.selector-container .form-group input {
+  display: block;
+  margin-top: 10px;
+  padding: 0 5px;
+  font-family: HelveticaLTPro-Bold;
+  background-color: #fff;
+  width: 210px;
+  border-radius: 2px;
+  line-height: 30px;
+  font-size: 12px;
+}
+
+.selector-container .sign {
+  margin-right: 0;
+}
+
+.selector-container .sign p {
+  padding: 5px 0;
+  margin-top: 24px;
+  width: 2px;
+  height: 30px;
+  background-color: #fff;
+}
+
+.selector-container .sign p b {
+  border-right: 1px solid #ccc;
+  height: 20px;
+  display: inline-block;
+
+}
+
+.selector-container .form-group .icon-date {
+  position: absolute;
+  width: 16px;
+  height: 14px;
+  background: url("/assets/calendar.png");
+  top: 30px;
+  right: 5px;
+}
+
+.selector-container #check-in,
+.selector-container #check-out {
+  background: #fff url("/assets/calendar.png") no-repeat 10px 6px/16px 14px;
+  padding: 0 35px;
+  height: 30px;
+}
+
+.selector-container #check-in {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  /*border-right: 1px solid #ccc;*/
+}
+
+.selector-container #check-out {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.selector-container .cityname input {
+  width: 260px;
+  height: 30px;
+}
+
+.selector-container .search-result {
+  background: #fff;
+  /*width: 333px;*/
+  width: 385px;
+  position: absolute;
+  top: 72px;
+  left: -5px;
+  z-index: 10;
+  border: 1px solid #CDCDCD;
+  border-radius: 2px;
+  display: none;
+  padding-top: 10px;
+}
+
+.selector-container .search-result::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  border-top: 1px solid #CDCDCD;
+  border-left: 1px solid #CDCDCD;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  top: -6px;
+  left: 10px;
+}
+
+.selector-container .cityname h2 {
+  font-size: 12px;
+  font-family: HelveticaLTPro-Bold;
+  margin: 20px 10px;
+}
+
+.selector-container .cityname .result-items {
+  height: 270px;
+  overflow: auto;
+}
+
+.selector-container .cityname .result-item {
+  color: #999999;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.selector-container .cityname i {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+.selector-container .cityname span {
+  max-width: 250px;
+  display: block
+}
+
+.selector-container .cityname .active {
+  background: rgba(11, 157, 120, .2);
+  color: #0B9D78
+}
+
+.selector-container .rooms-guest input {
+  width: 170px;
+  height: 30px;
+}
+
+.selector-container .rooms-guest .icon-down {
+  position: absolute;
+  width: 14px;
+  height: 7px;
+  background: url("/assets/icon-back-disabled.png") no-repeat center/contain;
+  top: 30px;
+  right: 5px;
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+
+.selector-container .rooms-guest .icon-down:last-of-type {
+  transform: rotate(90deg);
+  top: 40px
+}
+
+.selector-container .rooms-guest .search-result-container {
+  padding: 10px;
+  max-height: 320px;
+  overflow: auto;
+}
+
+.selector-container .rooms-guest .result-item {
+  font-family: HelveticaLTPro-Light;
+  font-size: 12px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #CDCDCD;
+}
+
+.selector-container .rooms-guest .result-info {
+  margin-top: 5px;
+}
+
+.selector-container .rooms-guest em {
+  width: 18px;
+  height: 21px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  float: left;
+}
+
+.selector-container .rooms-guest b {
+  font-weight: normal;
+  font-family: HelveticaLTPro-Bold;
+  font-size: 22px;
+  float: left;
+  margin-left: 10px;
+  height: 30px;
+  width: 30px;
+  line-height: 36px;
+  text-align: center;
+}
+
+.selector-container .room-result .r-info {
+  margin: 5px 0;
+  display: none;
+}
+
+.selector-container .room-result .edit, .remove {
+  color: #0B9D78;
+  cursor: pointer;
+  float: right;
+}
+
+/* .selector-container .room-result em {
+  width: 20px;
+  height: 20px;
+  background: url("/assets/icon-rooms-normal.png") no-repeat center;
+} */
+.selector-container .adult-result em {
+  background: url("/assets/adult.png") no-repeat center;
+}
+
+.selector-container .child-result em {
+  background: url("/assets/child.png") no-repeat center;
+}
+
+.selector-container .child-age .child-age-item {
+  margin-bottom: 10px;
+  font-family: HelveticaLTPro-Light;
+}
+
+.selector-container .child-age h1 {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.selector-container .child-age i {
+  float: left;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.selector-container .child-age .selected {
+  background: rgba(28, 156, 120, .2);
+  font-family: HelveticaLTPro-Roman;
+}
+
+.selector-container .result-item .minus {
+  width: 16px;
+  height: 16px;
+  background: url("/assets/minus.png") no-repeat center;
+  float: right;
+  margin-right: 20px;
+  cursor: pointer;
+  margin-top: 7px;
+}
+
+.selector-container .result-item .minus.minus-disabled {
+  pointer-events: none;
+  /*cursor: default;*/
+  opacity: 0.4;
+  cursor: move;
+}
+
+.selector-container .result-item .add {
+  width: 18px;
+  height: 18px;
+  float: right;
+  background: url("/assets/add.png") no-repeat center;
+  cursor: pointer;
+  margin-top: 7px;
+}
+
+.selector-container .result-item .add.add-disabled {
+  pointer-events: none;
+  opacity: 0.4;
+  cursor: move;
+}
+
+.selector-container .room-operate {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.selector-container .add-room {
+  background: #FC9525;
+  border-radius: 4px;
+  width: 140px;
+  height: 34px;
+  display: block;
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  font-family: HelveticaLTPro-Bold;
+  text-align: center;
+  line-height: 34px;
+  margin-left: 10px;
+  /* margin:20px auto 0; */
+}
+
+.selector-container .done {
+  font-size: 16px;
+  line-height: 34px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  cursor: pointer;
+}
+
+.selector-container .go {
+  border: none;
+  background: #FC9525;
+  border-radius: 2px;
+  color: #fff;
+  height: 30px;
+  width: 155px;
+  line-height: 30px;
+  margin-top: 25px
+}
+
+/*优惠券样式*/
+.main .coupons {
+  margin: 20px 40px 30px;
+  position: relative;
+}
+
+.main .coupons .coupons-container {
+  overflow: hidden;
+}
+
+.main .coupons .coupon-group {
+  transition: transform .2s linear;
+  transform: translateX(0px);
+}
+
+.main .coupon {
+  float: left;
+  width: 260px;
+  height: 210px;
+  margin-right: 26px;
+  border: 1px dashed #CDCDCD;
+  overflow: hidden;
+}
+
+.main .coupon a {
+  display: block;
+  overflow: hidden;
+}
+
+.main .coupon .img-1 {
+  width: 100%;
+  height: 100%;
+  background: url(/assets/f7de1469e9613618531f569d85c20c69.png);
+}
+
+.main .coupon .img-2 {
+  width: 100%;
+  height: 100%;
+  background: url(/assets/565cea90dcfd66c37b1796ae18746d4c.png);
+}
+
+.main .coupon .img-3 {
+  width: 100%;
+  height: 100%;
+  background: url(/assets/1c9deaee20f5a23a2fe99e9b302fcf92.png);
+}
+
+.main .coupon a img {
+  width: 100%;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.main .coupon a p {
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.main .coupon .coupon-price {
+  text-align: center;
+  color: #EE1E26;
+  font-size: 16px;
+  font-family: HelveticaLTPro-Bold;
+  font-weight: bold;
+  line-height: 35px;
+  width: 230px;
+  margin: 0 auto;
+  border-bottom: 2px dashed #ccc;
+}
+
+.main .coupon .coupon-code {
+  margin: 10px 20px;
+  font-family: HelveticaLTPro-Light;
+  position: relative;
+}
+
+.main .coupon .coupon-code p:last-of-type {
+  background: url("/assets/coupon.png") no-repeat;
+  height: 6px;
+}
+
+.main .coupon .coupon-code p:first-of-type {
+  font-family: HelveticaLTPro-Bold;
+  font-size: 14px;
+  margin: 7px 0 5px;
+}
+
+.main .coupon .coupon-code i {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url("/assets/icon-copy-normal.png");
+  top: 7px;
+  right: 0;
+}
+
+.main .coupons .coupons-btn {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  transform: translateY(-12px);
+  cursor: pointer;
+}
+
+.main .coupons .coupons-prev {
+  left: -40px;
+  background: url("/assets/icon-leftback-normal.png") no-repeat left;
+}
+
+.main .coupons .coupons-next {
+  right: -40px;
+  background: url("/assets/icon-rightback-normal.png") no-repeat right;
+}
+
+.main .coupons .coupons-btn-disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6;
+}
+
+/*最好的保证样式*/
+.main .guaranteed {
+  text-align: center;
+  margin-top: 20px;
+  font-family: HelveticaLTPro-Bold;
+  font-size: 16px;
+}
+
+.main .guaranteed span {
+  color: #F65758;
+}
+
+/*公司介绍样式*/
+.main .introduction {
+  position: relative;
+}
+
+.main .introduction i {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url("/assets/Group50.png");
+  top: -20px;
+  right: 0;
+  z-index: 10;
+}
+
+.main .introduction i.active {
+  background: url("/assets/Group24.png");
+}
+
+.main .introduction .introduction-info {
+  padding: 0 40px;
+  display: none;
+}
+
+.main .introduction .introduction-info p {
+  font-family: HelveticaLTPro-Light;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+
+.main .introduction .introduction-info span {
+  font-size: 20px;
+  font-family: HelveticaLTPro-Bold;
+}
+
+.main .introduction .introduction-info h2 {
+  font-size: 22px;
+  margin-bottom: 17px
+}
+
+.main .introduction .introduction-info li {
+  line-height: 16px;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.swiper .swiper-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+/*.swiper .swiper-wrapper {*/
+  /*transform: translate3d(-1200px, 0, 0);*/
+  /*transition: transform 0.3s ease-in-out;*/
+/*}*/
+
+.swiper-slide {
+  float: left;
+  width: 1200px;
+  height: 360px;
+}
+
+
+
+.main .swiper .swiper-button-prev {
+  background: rgba(0, 0, 0, .5) url(./img/group.png);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  left: 0;
+}
+
+.main .swiper .swiper-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.main .swiper .swiper-button-next {
+  background: rgba(0, 0, 0, .5) url(./img/Group10.png);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  right: 0;
+}
